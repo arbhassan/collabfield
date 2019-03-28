@@ -4,11 +4,11 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 
 require 'capybara/poltergeist'
-  require 'factory_girl_rails'
+  require 'factory_bot'
   require 'capybara/rspec'
 
   config.include Devise::Test::IntegrationHelpers, type: :feature
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
   Capybara.javascript_driver = :poltergeist
   Capybara.server = :puma 
 # Prevent database truncation if the environment is production
